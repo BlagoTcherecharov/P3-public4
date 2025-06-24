@@ -9,7 +9,7 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "47de59fe-1f2d-4494-8020-c56977b7c3ef"
+  subscription_id = "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
 }
 
 resource "azurerm_virtual_network" "example" {
@@ -48,7 +48,7 @@ resource "azurerm_linux_virtual_machine" "example" {
     azurerm_network_interface.example.id
   ]
 
-  admin_password = "Test@123"
+  admin_password = "${{ secrets.ADMIN_PASSWORD }}"
   disable_password_authentication = false
 
   os_disk {
