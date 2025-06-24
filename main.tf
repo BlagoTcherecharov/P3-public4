@@ -1,8 +1,10 @@
 terraform {
-  resource_group_name    = "student"
+    backend "azurerm" {
+    resource_group_name  = "student"
     storage_account_name = "studentexample"
     container_name       = "student"
-    key                  = "newvm.tfstate"
+    key                  = "terraform.tfstate"
+  }
 
   required_providers {
     azurerm = {
