@@ -1,4 +1,9 @@
 terraform {
+  resource_group_name    = "student"
+    storage_account_name = "studentexample"
+    container_name       = "student"
+    key                  = "newvm.tfstate"
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
